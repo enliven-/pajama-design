@@ -10,7 +10,7 @@
       width: 100%;
     }
     ui-card {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     </style>
 
@@ -22,7 +22,6 @@
           favorite="{{post.favorite}}"
           on-favorite-tap="{{handleFavorite}}"
           hidden?="{{show == 'favorites' && !post.favorite}}">
-          <img src="{{post.avatar}}" width="70" height="70">
           <h2>{{post.username}}</h2>
           <p>{{post.text}}</p>
         </ui-card>

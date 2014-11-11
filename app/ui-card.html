@@ -1,10 +1,11 @@
 <link rel="import" href="../components/polymer/polymer.html">
 <link rel="import" href="../components/core-icon-button/core-icon-button.html">
+<link rel="import" href="../components/polymer-ui-card/polymer-ui-card.html">
 
 <polymer-element name="ui-card">
   <template>
     <style>
-    :host {
+/*    :host {
       display: block;
       position: relative;
       background-color: white;
@@ -13,21 +14,17 @@
       font-size: 1.2rem;
       font-weight: 300;
       color: gray;
+    }*/
+    polymer-ui-card {
+      display: block;
+      padding: 0 15px 5px 15px;
+      width: auto;
+      color: #636363;
+      background-color: white;
+      font-family: RobotoDraft, Roboto, sans-serif;
     }
     .card-header {
       margin-bottom: 10px;
-    }
-    polyfill-next-selector { content: '.card-header h2'; }
-    .card-header ::content h2 {
-      margin: 0;
-      font-size: 1.8rem;
-      font-weight: 300;
-    }
-    polyfill-next-selector { content: '.card-header img'; }
-    .card-header ::content img {
-      width: 70px;
-      border-radius: 50%;
-      margin: 10px;
     }
     core-icon-button {
       color: #636363;
@@ -37,32 +34,45 @@
       top: 3px;
       right: 3px;
     }
-    :host([favorite]) core-icon-button {
+    :host([favorite]) core-icon-button.favorite {
       color: #da4336;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 3px;
+    }
+    p {
+      font-size: 14px;
+      margin-top: 0px;
+    }
+    span.price {
+      color: red;
+    }
+    img {
+      width: 50px;
+      border-radius: 50%;
+      float: right;
+      height: 50px;
+      margin-top: -15px;
+    }
+    .footer {
+      margin-top: -10px;
     }
     </style>
 
-    <div class="card-header" layout horizontal center>
-
-      <content select="img"></content>
-      <content select="h2"></content>
-
-    </div>
-
-    <core-icon-button
-      id="favicon"
-      class="favorite"
-      icon="favorite"
-      on-tap="{{favoriteTapped}}">
-    </core-icon-button>
-
-    <content></content>
-
-    <div class="footer">
-        <core-icon-button icon="mail" class="msg"></core-icon-button>
-        <core-icon-button icon="wallet-giftcard" class="buy"></core-icon-button>
-    </div>
-
+    <polymer-ui-card layout vertical>
+      <h2>B L Thereja</h2>
+      <p>Book in decent condition, latest edition and something else too</p>
+      <div>
+        <span class="price">Rs 200</span>
+        <img src="../images/avatar-03.svg" width="70" height="70">
+      </div>
+      <div class="footer">
+          <core-icon-button icon="mail" class="msg"></core-icon-button>
+          <core-icon-button icon="wallet-giftcard" class="buy"></core-icon-button>
+      </div>
+    </polymer-ui-card>
 
   </template>
   <script>
@@ -80,3 +90,4 @@
   });
   </script>
 </polymer-element>
+<!-- <img src="../images/avatar-01.svg" width="70" height="70"> -->

@@ -36,12 +36,17 @@
     }
     paper-input#search::shadow input {
       font-size: 14px;
+      color: white;
     }
+    paper-input#search {
+      /*color: white !important;*/
+    }
+
     [drawer] {
       background-color: #333;
     }
     core-toolbar {
-      background-color: #3e50b4;
+      background-color: #bc212d;
     }
     /* drawer is always visible on a wide screen
        so menu button isn't required */
@@ -49,8 +54,8 @@
       display: none;
     }
     .container {
-      width: 80%;
-      margin: 50px auto;
+      width: 90%;
+      margin: 10px auto;
     }
 
   </style>
@@ -64,10 +69,11 @@
   <core-header-panel drawer id="drawer">
     <core-toolbar id="drawer-header">
       <span>pajamadeals</span>
+      <core-item icon="favorite"></core-item>
     </core-toolbar>
     <core-menu>
       <core-item icon="settings" label="Settings"></core-item>
-      <core-item icon="favorite" label="Favorite"></core-item>
+      <!-- <core-item icon="favorite" label="Favorite"></core-item> -->
       <core-item icon="account-box" label="Account"></core-item>
     </core-menu>
    </core-header-panel>
